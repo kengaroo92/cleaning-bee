@@ -6,7 +6,7 @@ function Navbar() {
 
     return (
         <nav className='bg-white shadow-md'>
-            <div className='flex items-center justify-between py-8 px-4'>
+            <div className='flex items-center justify-between py-8 px-20'>
                 <div className='flex items-center space-x-4'>
                     <img
                         src='/logo.svg'
@@ -17,7 +17,7 @@ function Navbar() {
                         Cleaning Bee
                     </span>
                 </div>
-                <div className='hidden md:flex space-x-6 font-bold text-xl'>
+                <div className='hidden xl:flex space-x-8 font-bold text-xl'>
                     <Link
                         to='/'
                         className='text-beeBlack hover:text-beeYellow transition-colors'
@@ -61,7 +61,7 @@ function Navbar() {
                         Blog
                     </Link>
                 </div>
-                <div className='hidden md:block'>
+                <div className='hidden xl:block'>
                     <a
                         href='tel:+18017122639'
                         className='bg-beeYellow text-beeBlack px-4 py-2 rounded hover:bg-yellow-500 transition-colors'
@@ -70,7 +70,7 @@ function Navbar() {
                     </a>
                 </div>
                 <button
-                    className='md:hidden flex flex-col space-y-1 items-end'
+                    className='xl:hidden flex flex-col space-y-1 items-end'
                     onClick={() => setMenuOpen(!menuOpen)}
                     aria-label='Toggle Menu'
                 >
@@ -80,7 +80,7 @@ function Navbar() {
                 </button>
             </div>
             {menuOpen && (
-                <div className='md:hidden bg-white border-t border-gray-200'>
+                <div className='xl:hidden bg-white border-t border-gray-200'>
                     <Link
                         to='/'
                         onClick={() => setMenuOpen(false)}
