@@ -6,7 +6,7 @@ import About from "./pages/About.jsx";
 import Services from "./pages/Services.jsx";
 import Residential from "./pages/services/Residential.jsx";
 import Commercial from "./pages/services/Commercial.jsx";
-import Construction from "./pages/services/Construction.jsx";
+import PostConstruction from "./pages/services/PostConstruction.jsx";
 import Janitorial from "./pages/services/Janitorial.jsx";
 import Pricing from "./pages/Pricing.jsx";
 import Contact from "./pages/Contact.jsx";
@@ -31,8 +31,8 @@ function App() {
                         element={<Commercial />}
                     />
                     <Route
-                        path='/services/construction'
-                        element={<Construction />}
+                        path='/services/post-construction'
+                        element={<PostConstruction />}
                     />
                     <Route
                         path='/services/janitorial'

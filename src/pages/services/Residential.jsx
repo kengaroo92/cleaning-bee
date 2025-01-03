@@ -1,93 +1,80 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 function Residential() {
     return (
         <div className='w-[70%] mx-auto my-16 text-gray-700'>
             <Helmet>
-                <title>Residential Cleaning Services | Cleaning Bee</title>
+                <title>Residential Cleaning | Cleaning Bee</title>
                 <meta
                     name='description'
-                    content='Discover Cleaning Bee’s residential cleaning services in the Salt Lake Valley—standard cleans, deep cleans, carpet care, and custom packages. We use eco-friendly products and flexible scheduling to make your home sparkle.'
-                />
-                <meta
-                    name='keywords'
-                    content='residential cleaning, home cleaning, deep clean, carpet cleaning, eco-friendly cleaning, salt lake valley, cleaning bee'
+                    content="Enjoy a spotless, refreshing home with Cleaning Bee's residential cleaning services. From kitchens and bathrooms to living areas and bedrooms, we've got you covered."
                 />
             </Helmet>
 
-            {/* Hero Section */}
-            <section className='space-y-6 text-center'>
-                <h1 className='text-5xl font-bold text-beeBlack leading-tight'>
+            {/* Hero / Header */}
+            <section className='mb-10'>
+                <h1 className='text-4xl md:text-5xl font-bold text-beeBlack mb-4'>
                     Residential Cleaning
                 </h1>
-                <p className='text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto'>
-                    Enjoy a spotless, comfortable home without the hassle.
-                    Cleaning Bee offers a range of residential cleaning services
-                    tailored to your unique needs—ensuring your living space is
-                    always fresh, healthy, and ready to welcome you.
+                <p className='text-lg md:text-xl leading-relaxed max-w-2xl'>
+                    Keep your home fresh and inviting with our comprehensive
+                    residential cleaning solutions. Whether you need weekly
+                    upkeep or a deep clean, our team customizes services to your
+                    lifestyle.
                 </p>
             </section>
 
-            <section className='mt-16'>
+            {/* Image */}
+            <section className='mb-8'>
                 <img
-                    src='/images/residential-hero.jpg'
+                    src='/images/residential-cleaning.jpg'
                     alt='Residential Cleaning'
-                    className='w-full h-64 object-cover rounded-lg shadow-lg'
+                    className='w-full h-64 object-cover rounded shadow-md'
                 />
             </section>
 
-            {/* Detailed Services */}
-            <section className='space-y-10 mt-16'>
-                <h2 className='text-4xl font-bold text-beeBlack'>
-                    Our Residential Offerings
+            {/* Service Details */}
+            <section className='space-y-6'>
+                <h2 className='text-2xl font-bold text-beeBlack'>
+                    What We Offer
                 </h2>
-                <ul className='list-disc list-inside space-y-3 text-xl leading-relaxed'>
+                <ul className='list-disc list-inside space-y-3 text-lg leading-relaxed'>
                     <li>
-                        <strong>Standard Cleans:</strong> Keep your home tidy
-                        with regular visits that cover kitchens, bathrooms,
-                        dusting, and vacuuming.
+                        <strong>Standard Maintenance:</strong> Regular dusting,
+                        vacuuming, mopping, and light tidying.
                     </li>
                     <li>
-                        <strong>Deep Cleans:</strong> Ideal for seasonal
-                        refreshes or special occasions—extensive attention to
-                        detail including baseboards, appliances, and
-                        hard-to-reach areas.
+                        <strong>Deep Cleans:</strong> Baseboards, vents,
+                        appliances, and all those hard-to-reach spots.
                     </li>
                     <li>
-                        <strong>Carpet & Upholstery Care:</strong> Remove
-                        stains, odors, and allergens with our professional
-                        carpet cleaning and upholstery refresh.
+                        <strong>Carpet & Upholstery Care:</strong> Stain
+                        removal, deodorizing, and fiber refresh.
                     </li>
                     <li>
-                        <strong>Custom Packages:</strong> Have unique needs?
-                        We’ll create a personalized plan—child-friendly areas,
-                        pet zones, or rotating tasks—as per your lifestyle.
+                        <strong>Move-In/Move-Out:</strong> Ensure your new or
+                        old home is spotless for a smooth transition.
                     </li>
                 </ul>
-                <p className='text-xl text-gray-700 leading-relaxed'>
-                    We use eco-friendly, non-toxic products for a safe and
-                    healthy environment. With flexible scheduling and friendly
-                    staff, you can trust Cleaning Bee to maintain your home, so
-                    you have more time for what matters most.
+                <p className='text-lg leading-relaxed'>
+                    Our eco-friendly products are safe for children and pets,
+                    giving you peace of mind along with a sparkling home. We
+                    take pride in ensuring every corner looks its best—so you
+                    can enjoy a comfortable, inviting space every day.
                 </p>
             </section>
 
             {/* CTA */}
-            <section className='text-center space-y-6 mt-16'>
-                <h2 className='text-3xl font-bold text-beeBlack'>
-                    Ready to Enjoy a Spotless Home?
-                </h2>
-                <p className='text-xl text-gray-700 leading-relaxed'>
-                    Contact us to discuss your residential cleaning needs, or
-                    explore our other services to find the perfect fit for your
-                    space.
-                </p>
+            <section className='mt-8'>
                 <a
-                    href='/contact'
-                    className='inline-block bg-beeYellow text-beeBlack font-semibold py-3 px-6 rounded hover:bg-yellow-500 transition-colors text-xl'
+                    href='https://clienthub.getjobber.com/booking/eec2e0b1-8545-40e9-a42f-8e2fe1debdcb'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='inline-block bg-beeYellow text-beeBlack font-semibold py-2 px-4 rounded hover:bg-yellow-500 transition-colors'
                 >
-                    Get a FREE Quote
+                    Schedule Your Home Cleaning
                 </a>
             </section>
         </div>

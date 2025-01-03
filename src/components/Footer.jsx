@@ -1,131 +1,103 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaInstagram } from "react-icons/fa";
 
 function Footer() {
     return (
-        <footer className='bg-beeBlack text-white pt-10 pb-4'>
-            {/* Three Columns */}
-            <div className='w-[70%] mx-auto grid md:grid-cols-3 gap-8 mb-8 text-white'>
-                {/* Column 1 */}
-                <div className='space-y-4'>
-                    <div>
-                        <h3 className='text-lg font-bold mb-2'>
-                            Licensed & Insured
-                        </h3>
-                        <p>
-                            License No: <span className='ml-2'>123ABC</span>{" "}
+        <footer className='bg-beeBlack text-white pt-10 pb-6'>
+            <div className='w-[90%] md:w-[70%] mx-auto'>
+                {/* Top Section: 2 or 3 Columns */}
+                <div className='grid md:grid-cols-3 gap-8 mb-8'>
+                    {/* Column 1: About */}
+                    <div className='space-y-4'>
+                        <h3 className='text-xl font-bold'>Cleaning Bee</h3>
+                        <p className='text-sm md:text-base leading-relaxed'>
+                            We provide top-quality residential and commercial
+                            cleaning services, using eco-friendly methods to
+                            keep your space spotless. Proudly serving the Salt
+                            Lake Valley with a personal touch.
                         </p>
                     </div>
-                    <div>
-                        <h4 className='text-lg font-bold mb-2'>Contact Us</h4>
-                        <p className='mb-1'>
-                            Phone:{" "}
-                            <a href='tel:8017122639' className='ml-2'>
-                                801.712.2639
-                            </a>
-                        </p>
-                        <p>
-                            Email:{" "}
+
+                    {/* Column 2: Quick Links */}
+                    <div className='space-y-4'>
+                        <h4 className='text-xl font-bold'>Quick Links</h4>
+                        <ul className='space-y-2 text-sm md:text-base'>
+                            <li>
+                                <Link
+                                    to='/'
+                                    className='underline hover:text-beeYellow'
+                                >
+                                    Home
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to='/about'
+                                    className='underline hover:text-beeYellow'
+                                >
+                                    About Us
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to='/services'
+                                    className='underline hover:text-beeYellow'
+                                >
+                                    Services
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    to='/contact'
+                                    className='underline hover:text-beeYellow'
+                                >
+                                    Contact
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+
+                    {/* Column 3: Contact Info */}
+                    <div className='space-y-4'>
+                        <h4 className='text-xl font-bold'>Get in Touch</h4>
+                        <p className='text-sm md:text-base'>
+                            <span className='font-semibold'>Phone:</span>{" "}
                             <a
-                                href='mailto:info@cleaningbee.com'
-                                className='ml-2'
+                                href='tel:8017122639'
+                                className='underline hover:text-beeYellow'
                             >
-                                info@cleaningbee.com
+                                (801) 712-2639
+                            </a>
+                        </p>
+                        <p className='text-sm md:text-base'>
+                            <span className='font-semibold'>Email:</span>{" "}
+                            <a
+                                href='mailto:ken@cleaningbeeutah.com'
+                                className='underline hover:text-beeYellow'
+                            >
+                                ken@cleaningbeeutah.com
                             </a>
                         </p>
                     </div>
                 </div>
 
-                {/* Column 2 - Why Us? */}
-                <div className='space-y-4'>
-                    <h3 className='text-lg font-bold mb-2'>Why Us?</h3>
-                    <ul className='list-disc list-inside space-y-2'>
-                        <li>Free Quotes, Competitive Pricing</li>
-                        <li>Local, Family-Owned & Operated</li>
-                        <li>Experienced and Friendly Staff</li>
-                        <li>Eco-Friendly Cleaning Products</li>
-                        <li>Customized Cleaning Solutions</li>
-                        <li>Flexible Scheduling</li>
-                        <li>Dedicated Customer Support</li>
-                        <li>Customer Satisfaction Guaranteed</li>
-                    </ul>
+                {/* Social Icons */}
+                <div className='mb-6 flex items-center justify-center space-x-6'>
+                    <a
+                        href='https://www.facebook.com/profile.php?id=61570991577643'
+                        className='text-white hover:text-beeYellow transition-colors'
+                        aria-label='Facebook'
+                    >
+                        <FaFacebookF size={20} />
+                    </a>
                 </div>
 
-                {/* Column 3 - Our Services */}
-                <div className='space-y-4'>
-                    <h3 className='text-lg font-bold mb-2'>Our Services</h3>
-                    <ul className='space-y-1'>
-                        <li>
-                            <Link
-                                to='/services#residential'
-                                className='underline'
-                            >
-                                Residential Cleaning
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to='/services#commercial'
-                                className='underline'
-                            >
-                                Commercial Cleaning
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to='/services#deep-cleaning'
-                                className='underline'
-                            >
-                                Deep Cleaning
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to='/services#moveout' className='underline'>
-                                Move-In/Move-Out Cleaning
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to='/services#recurring'
-                                className='underline'
-                            >
-                                Recurring Maintenance
-                            </Link>
-                        </li>
-                    </ul>
+                {/* Bottom: Rights Reserved */}
+                <div className='text-center text-sm border-t border-gray-600 pt-4'>
+                    &copy; {new Date().getFullYear()} Cleaning Bee. All Rights
+                    Reserved.
                 </div>
-            </div>
-
-            {/* Social Media Icons */}
-            <div className='w-[70%] mx-auto mb-4 flex items-center justify-center space-x-6'>
-                <a
-                    href='https://facebook.com'
-                    className='text-white hover:text-beeYellow'
-                    aria-label='Facebook'
-                >
-                    <FaFacebookF size={20} />
-                </a>
-                <a
-                    href='https://twitter.com'
-                    className='text-white hover:text-beeYellow'
-                    aria-label='Twitter'
-                >
-                    <FaTwitter size={20} />
-                </a>
-                <a
-                    href='https://instagram.com'
-                    className='text-white hover:text-beeYellow'
-                    aria-label='Instagram'
-                >
-                    <FaInstagram size={20} />
-                </a>
-            </div>
-
-            {/* Rights Reserved */}
-            <div className='w-[70%] mx-auto text-center text-sm'>
-                &copy; {new Date().getFullYear()} Cleaning Bee. All Rights
-                Reserved.
             </div>
         </footer>
     );

@@ -5,159 +5,175 @@ function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
     const [servicesOpen, setServicesOpen] = useState(false);
 
-    const handleServicesClickMobile = () => {
-        // On mobile, toggle services submenu
-        setServicesOpen((prev) => !prev);
-    };
+    const toggleMenu = () => setMenuOpen(!menuOpen);
+    const toggleServices = () => setServicesOpen(!servicesOpen);
 
     return (
-        <header className='w-full relative z-50'>
-            {/* Top bar (Bar 1) - Hidden on mobile, shown on xl and above */}
-            <div className='hidden xl:grid bg-beeYellow text-beeBlack py-3 px-6 xl:px-20 xl:grid-cols-[15%,40%,30%,15%] items-center gap-4'>
-                <div></div>
-                <div className='font-bold text-2xl leading-tight text-left'>
-                    Your #1 Residential Cleaning Experts.
+        <header className='w-full bg-white shadow-sm z-50 relative'>
+            <div className='mx-auto px-4 md:px-8 flex items-center justify-between h-16'>
+                {/* Left Section: Logo + Name */}
+                <div className='flex items-center space-x-2'>
+                    <Link to='/'>
+                        <span className='font-bold text-2xl text-beeBlack hover:text-beeYellow transition-colors'>
+                            <img
+                                src='/Horizontal-Logo.svg'
+                                alt='Cleaning Bee Logo'
+                                className='object-contain h-full w-full'
+                            />
+                        </span>
+                    </Link>
                 </div>
-                <div className='flex flex-row justify-end items-center space-x-4 w-full'>
+
+                {/* Desktop Nav Links */}
+                <nav className='hidden md:flex items-center space-x-6 font-semibold text-lg'>
+                    <Link
+                        to='/'
+                        className='text-beeBlack hover:text-beeYellow transition-colors'
+                    >
+                        Home
+                    </Link>
+                    <Link
+                        to='/about'
+                        className='text-beeBlack hover:text-beeYellow transition-colors'
+                    >
+                        About Us
+                    </Link>
+
+                    {/* Services - Desktop Dropdown & Clickable Link */}
+                    <div className='relative group'>
+                        <Link
+                            to='/services'
+                            className='text-beeBlack hover:text-beeYellow transition-colors focus:outline-none'
+                        >
+                            Our Services
+                        </Link>
+                        <div
+                            className='
+                absolute left-0 w-48 bg-white border border-gray-200 
+                rounded-md shadow-md py-2 opacity-0 
+                group-hover:opacity-100 group-hover:translate-y-1 
+                transition-all transform 
+                scale-95 origin-top
+              '
+                        >
+                            <Link
+                                to='/services/residential'
+                                className='block px-4 py-2 text-beeBlack hover:bg-gray-100 hover:text-beeYellow'
+                            >
+                                Residential Cleaning
+                            </Link>
+                            <Link
+                                to='/services/commercial'
+                                className='block px-4 py-2 text-beeBlack hover:bg-gray-100 hover:text-beeYellow'
+                            >
+                                Commercial Cleaning
+                            </Link>
+                            <Link
+                                to='/services/post-construction'
+                                className='block px-4 py-2 text-beeBlack hover:bg-gray-100 hover:text-beeYellow'
+                            >
+                                Post-Construction Cleaning
+                            </Link>
+                            <Link
+                                to='/services/janitorial'
+                                className='block px-4 py-2 text-beeBlack hover:bg-gray-100 hover:text-beeYellow'
+                            >
+                                Janitorial Cleaning
+                            </Link>
+                        </div>
+                    </div>
+
+                    {/* Contact Page Link */}
+                    <Link
+                        to='/contact'
+                        className='text-beeBlack hover:text-beeYellow transition-colors'
+                    >
+                        Contact Us
+                    </Link>
+                </nav>
+
+                {/* Right Section: Phone + CTA (Desktop) */}
+                <div className='hidden md:flex items-center space-x-6'>
                     <a
                         href='tel:8017122639'
-                        className='font-bold text-2xl hover:text-black transition-colors whitespace-nowrap'
+                        className='text-xl font-bold text-beeBlack hover:text-beeYellow transition-colors'
                     >
                         (801) 712-2639
                     </a>
                     <a
                         href='https://clienthub.getjobber.com/booking/eec2e0b1-8545-40e9-a42f-8e2fe1debdcb'
                         target='_blank'
-                        rel='noopener'
-                        className='border-2 border-beeBlue bg-white text-beeBlue font-bold text-2xl py-2 px-4 rounded hover:bg-beeBlue hover:text-white transition-colors whitespace-nowrap'
+                        rel='noopener noreferrer'
+                        className='
+              bg-beeBlue text-white 
+              border-2 border-beeBlue 
+              font-bold text-lg 
+              py-2 px-6 
+              rounded-full 
+              hover:bg-white hover:text-beeBlue 
+              transition-all 
+              duration-200 
+              ease-in-out 
+              shadow-sm 
+              hover:shadow-md 
+              transform hover:-translate-y-0.5
+              focus:outline-none
+            '
                     >
                         Schedule A Cleaning
                     </a>
                 </div>
-                <div></div>
+
+                {/* Mobile Menu Button */}
+                <button
+                    className='md:hidden flex flex-col space-y-1'
+                    onClick={toggleMenu}
+                    aria-label='Toggle Menu'
+                >
+                    <span className='block w-6 h-[2px] bg-beeBlack'></span>
+                    <span className='block w-6 h-[2px] bg-beeBlack'></span>
+                    <span className='block w-6 h-[2px] bg-beeBlack'></span>
+                </button>
             </div>
-            {/* Bottom bar (Navbar / Bar 2) */}
-            <nav className='bg-white shadow-md'>
-                <div className='py-3 px-6 xl:px-20 flex items-center justify-between xl:grid xl:grid-cols-[15%,40%,30%,15%]'>
-                    <div className='hidden xl:block'></div>
 
-                    <div className='flex items-center space-x-3 xl:justify-start'>
-                        <img
-                            src='/logo.svg'
-                            alt='Cleaning Bee Logo'
-                            className='h-10 w-10'
-                        />
-                        <span className='font-bold text-2xl text-beeBlack'>
-                            Cleaning Bee
-                        </span>
-                    </div>
-
-                    {/* Main Nav (Desktop) */}
-                    <div className='hidden xl:flex justify-end space-x-8 font-bold text-2xl items-center'>
-                        <Link
-                            to='/'
-                            className='text-beeBlack hover:text-beeYellow transition-colors whitespace-nowrap'
-                        >
-                            Home
-                        </Link>
-                        <Link
-                            to='/about'
-                            className='text-beeBlack hover:text-beeYellow transition-colors whitespace-nowrap'
-                        >
-                            About Us
-                        </Link>
-                        {/* Services with Dropdown */}
-                        <div
-                            className='relative'
-                            onMouseEnter={() => setServicesOpen(true)}
-                            onMouseLeave={() => setServicesOpen(false)}
-                        >
-                            <button
-                                type='button'
-                                className='text-beeBlack hover:text-beeYellow transition-colors whitespace-nowrap focus:outline-none'
-                            >
-                                Services
-                            </button>
-                            {servicesOpen && (
-                                <div className='absolute top-full left-0 bg-white border border-gray-200 rounded shadow-lg py-2 w-48 z-50'>
-                                    <Link
-                                        to='/services/residential'
-                                        className='block px-4 py-2 text-beeBlack hover:text-beeYellow hover:bg-gray-50 font-normal'
-                                    >
-                                        Residential
-                                    </Link>
-                                    <Link
-                                        to='/services/commercial'
-                                        className='block px-4 py-2 text-beeBlack hover:text-beeYellow hover:bg-gray-50 font-normal'
-                                    >
-                                        Commercial
-                                    </Link>
-                                    <Link
-                                        to='/services/construction'
-                                        className='block px-4 py-2 text-beeBlack hover:text-beeYellow hover:bg-gray-50 font-normal'
-                                    >
-                                        Construction
-                                    </Link>
-                                    <Link
-                                        to='/services/janitorial'
-                                        className='block px-4 py-2 text-beeBlack hover:text-beeYellow hover:bg-gray-50 font-normal'
-                                    >
-                                        Janitorial
-                                    </Link>
-                                </div>
-                            )}
-                        </div>
-
-                        <Link
-                            to='/blog'
-                            className='text-beeBlack hover:text-beeYellow transition-colors whitespace-nowrap'
-                        >
-                            Blog
-                        </Link>
-                    </div>
-
-                    {/* Mobile Hamburger */}
-                    <div className='xl:hidden flex items-center justify-end w-auto'>
-                        <button
-                            className='flex flex-col space-y-1 items-end'
-                            onClick={() => setMenuOpen(!menuOpen)}
-                            aria-label='Toggle Menu'
-                        >
-                            <span className='block w-6 h-[2px] bg-beeBlack'></span>
-                            <span className='block w-4 h-[2px] bg-beeBlack'></span>
-                            <span className='block w-6 h-[2px] bg-beeBlack'></span>
-                        </button>
-                    </div>
-                </div>
-
-                {/* Mobile dropdown menu */}
-                {menuOpen && (
-                    <div className='xl:hidden bg-white border-t border-gray-200 px-4 py-4 space-y-3'>
+            {/* Mobile Menu */}
+            {menuOpen && (
+                <div className='md:hidden bg-white border-t border-gray-200 shadow-sm'>
+                    <div className='px-4 py-4 space-y-4'>
+                        {/* Nav Links for Mobile */}
                         <Link
                             to='/'
                             onClick={() => setMenuOpen(false)}
-                            className='block text-beeBlack hover:text-beeYellow transition-colors font-bold text-2xl'
+                            className='block text-beeBlack font-bold text-xl hover:text-beeYellow transition-colors'
                         >
                             Home
                         </Link>
                         <Link
                             to='/about'
                             onClick={() => setMenuOpen(false)}
-                            className='block text-beeBlack hover:text-beeYellow transition-colors font-bold text-2xl'
+                            className='block text-beeBlack font-bold text-xl hover:text-beeYellow transition-colors'
                         >
                             About
                         </Link>
-                        {/* Services with mobile toggle */}
+
+                        {/* Services with Mobile Toggle */}
                         <div>
-                            <button
-                                onClick={() => setServicesOpen(!servicesOpen)}
-                                className='w-full text-left text-beeBlack hover:text-beeYellow transition-colors font-bold text-2xl flex justify-between items-center focus:outline-none'
-                            >
-                                <span>Services</span>
-                                <span className='text-beeBlack'>
+                            {/* “Services” link & sub-items */}
+                            <div className='flex justify-between items-center'>
+                                <Link
+                                    to='/services'
+                                    onClick={() => setMenuOpen(false)}
+                                    className='text-beeBlack font-bold text-xl hover:text-beeYellow transition-colors'
+                                >
+                                    Services
+                                </Link>
+                                <button
+                                    onClick={toggleServices}
+                                    className='text-beeBlack font-bold text-xl hover:text-beeYellow transition-colors'
+                                >
                                     {servicesOpen ? "▲" : "▼"}
-                                </span>
-                            </button>
+                                </button>
+                            </div>
                             {servicesOpen && (
                                 <div className='mt-2 pl-4 space-y-2'>
                                     <Link
@@ -166,7 +182,7 @@ function Navbar() {
                                             setServicesOpen(false);
                                             setMenuOpen(false);
                                         }}
-                                        className='block text-beeBlack font-normal hover:text-beeYellow transition-colors text-xl'
+                                        className='block text-beeBlack font-normal hover:text-beeYellow transition-colors text-lg'
                                     >
                                         Residential
                                     </Link>
@@ -176,17 +192,17 @@ function Navbar() {
                                             setServicesOpen(false);
                                             setMenuOpen(false);
                                         }}
-                                        className='block text-beeBlack font-normal hover:text-beeYellow transition-colors text-xl'
+                                        className='block text-beeBlack font-normal hover:text-beeYellow transition-colors text-lg'
                                     >
                                         Commercial
                                     </Link>
                                     <Link
-                                        to='/services/construction'
+                                        to='/services/post-construction'
                                         onClick={() => {
                                             setServicesOpen(false);
                                             setMenuOpen(false);
                                         }}
-                                        className='block text-beeBlack font-normal hover:text-beeYellow transition-colors text-xl'
+                                        className='block text-beeBlack font-normal hover:text-beeYellow transition-colors text-lg'
                                     >
                                         Construction
                                     </Link>
@@ -196,7 +212,7 @@ function Navbar() {
                                             setServicesOpen(false);
                                             setMenuOpen(false);
                                         }}
-                                        className='block text-beeBlack font-normal hover:text-beeYellow transition-colors text-xl'
+                                        className='block text-beeBlack font-normal hover:text-beeYellow transition-colors text-lg'
                                     >
                                         Janitorial
                                     </Link>
@@ -204,24 +220,52 @@ function Navbar() {
                             )}
                         </div>
 
+                        {/* Contact Link */}
                         <Link
-                            to='/blog'
+                            to='/contact'
                             onClick={() => setMenuOpen(false)}
-                            className='block text-beeBlack hover:text-beeYellow transition-colors font-bold text-2xl'
+                            className='block text-beeBlack font-bold text-xl hover:text-beeYellow transition-colors'
                         >
-                            Blog
+                            Contact
                         </Link>
-                        <a
-                            href='https://clienthub.getjobber.com/booking/eec2e0b1-8545-40e9-a42f-8e2fe1debdcb'
-                            target='_blank'
-                            rel='noopener'
-                            className='border-2 border-beeBlue bg-white text-beeBlue font-bold text-xl py-2 px-4 rounded hover:bg-beeBlue hover:text-white transition-colors whitespace-nowrap mt-3 block'
-                        >
-                            Book a Cleaning
-                        </a>
+
+                        {/* CTA + Phone for Mobile */}
+                        <div className='pt-4 border-t border-gray-200 space-y-4'>
+                            <a
+                                href='tel:8017122639'
+                                onClick={() => setMenuOpen(false)}
+                                className='block text-xl font-bold text-beeBlack hover:text-beeYellow transition-colors'
+                            >
+                                (801) 712-2639
+                            </a>
+                            <a
+                                href='https://clienthub.getjobber.com/booking/eec2e0b1-8545-40e9-a42f-8e2fe1debdcb'
+                                target='_blank'
+                                rel='noopener'
+                                className='
+                  bg-beeBlue text-white 
+                  border-2 border-beeBlue 
+                  font-bold text-lg 
+                  py-2 px-6 
+                  rounded-full 
+                  hover:bg-white hover:text-beeBlue 
+                  transition-all 
+                  duration-200 
+                  ease-in-out 
+                  shadow-sm 
+                  hover:shadow-md 
+                  transform hover:-translate-y-0.5
+                  focus:outline-none
+                  block
+                '
+                                onClick={() => setMenuOpen(false)}
+                            >
+                                Schedule A Cleaning
+                            </a>
+                        </div>
                     </div>
-                )}
-            </nav>
+                </div>
+            )}
         </header>
     );
 }

@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 
 function Home() {
     return (
-        <div className='space-y-16'>
+        <div className='w-full'>
             <Helmet>
                 <title>
                     Cleaning Bee | Residential & Commercial Cleaning in the Salt
@@ -12,34 +12,59 @@ function Home() {
                 </title>
                 <meta
                     name='description'
-                    content='Cleaning Bee offers top-quality residential, commercial, construction, and janitorial cleaning services in the Salt Lake Valley. Experience eco-friendly cleaning solutions and flexible scheduling for a sparkling clean environment.'
+                    content='Cleaning Bee offers top-quality residential, commercial, post-construction, and janitorial cleaning services in the Salt Lake Valley. Experience eco-friendly cleaning solutions and flexible scheduling for a consistently spotless environment.'
                 />
                 <meta
                     name='keywords'
-                    content='residential cleaning, commercial cleaning, construction cleaning, janitorial services, eco-friendly cleaning, Salt Lake Valley, Utah'
+                    content='residential cleaning, commercial cleaning, post-construction cleaning, janitorial services, eco-friendly cleaning, Salt Lake Valley, Utah'
                 />
             </Helmet>
+
             {/* Hero Section */}
-            <section className='relative h-[60vh] w-screen bg-gray-100 overflow-hidden'>
+            <section className='relative h-[75vh] w-full bg-gray-100 overflow-hidden'>
                 <img
                     src='/images/hero-image.jpg'
                     alt='Clean Home'
-                    className='w-full h-full object-cover'
+                    className='absolute inset-0 w-full h-full object-cover'
                 />
-                <div className='absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-center items-center text-center px-4'>
-                    <h1 className='text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-md'>
-                        Your Home Cleaning Experts in the Salt Lake Valley
+                {/* Dark overlay with slight gradient */}
+                <div className='absolute inset-0 bg-gradient-to-b from-black/60 to-black/40' />
+
+                <div className='relative flex flex-col justify-center items-center h-full text-center px-4'>
+                    <h1 className='text-white text-4xl md:text-6xl font-bold drop-shadow-md mb-4 leading-tight'>
+                        Your Salt Lake Valley Cleaning Experts
                     </h1>
-                    <p className='text-lg md:text-xl text-white mb-8 max-w-xl'>
-                        Transforming homes and businesses with eco-friendly,
-                        personalized cleaning services. Let us handle the chores
-                        while you enjoy a fresh, comfortable space.
+                    <p className='text-white text-lg md:text-xl max-w-xl leading-relaxed mb-8'>
+                        From cozy homes to busy offices, we bring eco-friendly,
+                        personalized cleaning solutions so you can enjoy a
+                        fresh, comfortable space—stress-free.
                     </p>
                     <a
                         href='https://clienthub.getjobber.com/booking/eec2e0b1-8545-40e9-a42f-8e2fe1debdcb'
                         target='_blank'
                         rel='noopener'
-                        className='border-2 border-beeBlue bg-beeYellow text-beeBlue font-bold text-2xl py-2 px-6 rounded hover:bg-beeBlue hover:text-white transition-colors whitespace-nowrap'
+                        className='
+              inline-block
+              font-bold
+              text-xl
+              md:text-2xl
+              py-3
+              px-8
+              rounded-full
+              bg-beeBlue
+              text-white
+              border-2
+              border-beeBlue
+              transition-all
+              duration-200
+              ease-in-out
+              shadow-sm
+              hover:shadow-md
+              hover:bg-white
+              hover:text-beeBlue
+              transform hover:-translate-y-0.5
+              focus:outline-none
+            '
                     >
                         Schedule A Cleaning
                     </a>
@@ -47,39 +72,59 @@ function Home() {
             </section>
 
             {/* Services Section */}
-            <section className='w-[70%] mx-auto'>
-                <h2 className='text-3xl md:text-4xl font-bold text-beeBlack text-center mb-12'>
+            <section className='w-[90%] md:w-[70%] mx-auto py-16'>
+                <h2 className='text-3xl md:text-4xl font-bold text-beeBlack text-center mb-8'>
                     Our Cleaning Services
                 </h2>
-                <p className='text-gray-700 text-lg mb-8 text-center max-w-3xl mx-auto'>
+                <p className='text-gray-700 text-lg md:text-xl leading-relaxed mb-12 text-center max-w-2xl mx-auto'>
                     At Cleaning Bee, we offer a range of professional cleaning
-                    services to meet all your needs. From detailed residential
-                    cleans to specialized commercial or construction site
-                    cleaning, our team is equipped to handle it all. Explore our
-                    services below and learn how we can keep your environment
-                    spotless.
+                    services tailored to your needs. From comprehensive
+                    residential cleans to specialized commercial or
+                    post-construction cleaning, our trained team is equipped to
+                    keep your environment spotless.
                 </p>
+
                 <div className='grid md:grid-cols-4 gap-8'>
                     {/* Residential Cleaning */}
-                    <div className='bg-white shadow-lg rounded overflow-hidden'>
+                    <div className='bg-white shadow-lg rounded-lg overflow-hidden transition-transform hover:scale-105'>
                         <img
                             src='/images/residential-cleaning.jpg'
                             alt='Residential Cleaning'
                             className='w-full h-64 object-cover'
                         />
-                        <div className='p-4'>
+                        <div className='p-6'>
                             <h3 className='text-xl font-semibold text-beeBlack mb-2'>
                                 Residential Cleaning
                             </h3>
                             <p className='text-gray-700 mb-4'>
-                                Enjoy a pristine, relaxing home with our
-                                customized residential cleaning. We handle
-                                kitchens, bathrooms, bedrooms, and more—ensuring
-                                every corner is left spotless.
+                                Enjoy a relaxing home with our customized
+                                residential service. From kitchens and bathrooms
+                                to living spaces, we ensure every corner is left
+                                spotless.
                             </p>
                             <Link
                                 to='/services#residential'
-                                className='inline-block bg-beeYellow text-beeBlack py-2 px-4 rounded hover:bg-yellow-500 transition-colors'
+                                className='
+                  inline-block
+                  font-bold
+                  text-lg
+                  py-2
+                  px-5
+                  rounded-full
+                  bg-beeYellow
+                  text-beeBlack
+                  border-2
+                  border-beeYellow
+                  transition-all
+                  duration-200
+                  ease-in-out
+                  shadow-sm
+                  hover:shadow-md
+                  hover:bg-white
+                  hover:text-beeYellow
+                  transform hover:-translate-y-0.5
+                  focus:outline-none
+                '
                             >
                                 Learn More
                             </Link>
@@ -87,51 +132,89 @@ function Home() {
                     </div>
 
                     {/* Commercial Cleaning */}
-                    <div className='bg-white shadow-lg rounded overflow-hidden'>
+                    <div className='bg-white shadow-lg rounded-lg overflow-hidden transition-transform hover:scale-105'>
                         <img
                             src='/images/commercial-cleaning.jpg'
                             alt='Commercial Cleaning'
                             className='w-full h-64 object-cover'
                         />
-                        <div className='p-4'>
+                        <div className='p-6'>
                             <h3 className='text-xl font-semibold text-beeBlack mb-2'>
                                 Commercial Cleaning
                             </h3>
                             <p className='text-gray-700 mb-4'>
-                                Keep your office, retail store, or corporate
-                                space welcoming and hygienic. Our commercial
-                                team works around your schedule to maintain a
-                                professional image.
+                                Keep your office or retail space welcoming and
+                                hygienic. Our commercial team works on your
+                                schedule for a consistently polished image.
                             </p>
                             <Link
                                 to='/services#commercial'
-                                className='inline-block bg-beeYellow text-beeBlack py-2 px-4 rounded hover:bg-yellow-500 transition-colors'
+                                className='
+                  inline-block
+                  font-bold
+                  text-lg
+                  py-2
+                  px-5
+                  rounded-full
+                  bg-beeYellow
+                  text-beeBlack
+                  border-2
+                  border-beeYellow
+                  transition-all
+                  duration-200
+                  ease-in-out
+                  shadow-sm
+                  hover:shadow-md
+                  hover:bg-white
+                  hover:text-beeYellow
+                  transform hover:-translate-y-0.5
+                  focus:outline-none
+                '
                             >
                                 Learn More
                             </Link>
                         </div>
                     </div>
 
-                    {/* Construction Cleaning */}
-                    <div className='bg-white shadow-lg rounded overflow-hidden'>
+                    {/* Post-Construction Cleaning */}
+                    <div className='bg-white shadow-lg rounded-lg overflow-hidden transition-transform hover:scale-105'>
                         <img
                             src='/images/construction-cleaning.jpg'
-                            alt='Construction Cleaning'
+                            alt='Post-Construction Cleaning'
                             className='w-full h-64 object-cover'
                         />
-                        <div className='p-4'>
+                        <div className='p-6'>
                             <h3 className='text-xl font-semibold text-beeBlack mb-2'>
-                                Construction Cleaning
+                                Post-Construction Cleaning
                             </h3>
                             <p className='text-gray-700 mb-4'>
-                                Post-construction or renovation cleanup made
-                                easy. We remove dust, debris, and materials,
-                                leaving your new or remodeled space ready to be
-                                enjoyed.
+                                Renovated or newly built space? We remove dust
+                                and debris so you can enjoy your updated
+                                environment without the mess.
                             </p>
                             <Link
                                 to='/services#construction'
-                                className='inline-block bg-beeYellow text-beeBlack py-2 px-4 rounded hover:bg-yellow-500 transition-colors'
+                                className='
+                  inline-block
+                  font-bold
+                  text-lg
+                  py-2
+                  px-5
+                  rounded-full
+                  bg-beeYellow
+                  text-beeBlack
+                  border-2
+                  border-beeYellow
+                  transition-all
+                  duration-200
+                  ease-in-out
+                  shadow-sm
+                  hover:shadow-md
+                  hover:bg-white
+                  hover:text-beeYellow
+                  transform hover:-translate-y-0.5
+                  focus:outline-none
+                '
                             >
                                 Learn More
                             </Link>
@@ -139,25 +222,44 @@ function Home() {
                     </div>
 
                     {/* Janitorial Services */}
-                    <div className='bg-white shadow-lg rounded overflow-hidden'>
+                    <div className='bg-white shadow-lg rounded-lg overflow-hidden transition-transform hover:scale-105'>
                         <img
                             src='/images/janitorial-cleaning.jpg'
                             alt='Janitorial Services'
                             className='w-full h-64 object-cover'
                         />
-                        <div className='p-4'>
+                        <div className='p-6'>
                             <h3 className='text-xl font-semibold text-beeBlack mb-2'>
                                 Janitorial Services
                             </h3>
                             <p className='text-gray-700 mb-4'>
-                                Maintain a consistently clean and organized
-                                environment. Our janitorial services ensure
-                                offices, schools, and facilities remain pristine
-                                day after day.
+                                Keep offices, schools, and facilities
+                                consistently clean. Our janitorial services
+                                ensure everyday tidiness and organization.
                             </p>
                             <Link
                                 to='/services#janitorial'
-                                className='inline-block bg-beeYellow text-beeBlack py-2 px-4 rounded hover:bg-yellow-500 transition-colors'
+                                className='
+                  inline-block
+                  font-bold
+                  text-lg
+                  py-2
+                  px-5
+                  rounded-full
+                  bg-beeYellow
+                  text-beeBlack
+                  border-2
+                  border-beeYellow
+                  transition-all
+                  duration-200
+                  ease-in-out
+                  shadow-sm
+                  hover:shadow-md
+                  hover:bg-white
+                  hover:text-beeYellow
+                  transform hover:-translate-y-0.5
+                  focus:outline-none
+                '
                             >
                                 Learn More
                             </Link>
@@ -166,36 +268,37 @@ function Home() {
                 </div>
             </section>
 
-            {/* Why Choose Us Section - Two Columns */}
-            <section className='w-[70%] mx-auto mb-16'>
+            {/* Why Choose Us Section */}
+            <section className='w-[90%] md:w-[70%] mx-auto mb-16'>
                 <h2 className='text-3xl md:text-4xl font-bold text-beeBlack text-center mb-8'>
                     Why Choose Cleaning Bee?
                 </h2>
-                <p className='text-gray-700 text-lg mb-8 text-center max-w-3xl mx-auto'>
-                    We go above and beyond to ensure every customer is
-                    satisfied. With eco-friendly products, flexible scheduling,
-                    and a dedicated team, you can trust Cleaning Bee to deliver
-                    exceptional results every time.
+                <p className='text-gray-700 text-lg md:text-xl leading-relaxed mb-8 text-center max-w-3xl mx-auto'>
+                    We go above and beyond to exceed customer expectations. With
+                    eco-friendly products, flexible scheduling, and a dedicated
+                    local team, trust Cleaning Bee for remarkable results—every
+                    time.
                 </p>
-                <div className='grid gap-8 grid-cols-[3fr_1fr]'>
-                    {/* Left Column: Existing Text */}
-                    <div className='space-y-6 text-gray-700 text-lg'>
+
+                <div className='grid gap-8 md:grid-cols-[3fr_1fr]'>
+                    {/* Left Column */}
+                    <div className='space-y-6 text-gray-700 text-lg leading-relaxed'>
                         <p>
-                            At Cleaning Bee, we’re committed to providing a
-                            top-quality service with a personal touch. Our
-                            trained professionals use only the best equipment
-                            and products, ensuring your home or office truly
-                            shines.
+                            Our priority is delivering top-quality service with
+                            a personal touch. Each member of our trained team
+                            uses the best equipment and thorough techniques to
+                            ensure your home or office truly sparkles.
                         </p>
                         <ul className='list-disc list-inside space-y-2'>
                             <li>
-                                <strong>Reliable & Trustworthy Staff:</strong>{" "}
-                                Vetted and trained cleaners provide peace of
-                                mind.
+                                <strong>
+                                    Reliable &amp; Trustworthy Staff:
+                                </strong>{" "}
+                                Vetted cleaners provide peace of mind.
                             </li>
                             <li>
                                 <strong>Flexible Scheduling:</strong> We work
-                                around your calendar for ultimate convenience.
+                                around your calendar for maximum convenience.
                             </li>
                             <li>
                                 <strong>Eco-Friendly Products:</strong> Safe for
@@ -209,24 +312,21 @@ function Home() {
                             </li>
                         </ul>
                         <p>
-                            Ready to enjoy a cleaner, healthier space? Contact
-                            us today and discover how Cleaning Bee can make a
-                            difference in your home or business.
+                            Ready to enjoy a cleaner, healthier space? Reach out
+                            today and discover how Cleaning Bee can transform
+                            your home or business.
                         </p>
                     </div>
 
-                    {/* Right Column: Two Boxes, Yellow Background on Top Box, Yellow Checkmarks */}
+                    {/* Right Column */}
                     <div className='flex flex-col items-end space-y-4'>
-                        {/* Box 1: Why Us? Header on Yellow Background */}
-                        <div className='bg-beeYellow p-6 rounded w-full'>
-                            <h3 className='text-2xl font-bold text-beeBlack'>
+                        <div className='bg-beeYellow p-6 rounded w-full shadow-sm'>
+                            <h3 className='text-2xl font-bold text-beeBlack text-center'>
                                 Why Us?
                             </h3>
                         </div>
-
-                        {/* Box 2: Checkmark List */}
                         <div className='bg-white shadow-lg rounded p-6 w-full'>
-                            <ul className='space-y-3 text-gray-700 text-lg'>
+                            <ul className='space-y-3 text-gray-700 text-lg leading-relaxed'>
                                 <li className='flex items-start space-x-2'>
                                     <span className='text-beeYellow'>✔</span>
                                     <span>
@@ -235,11 +335,15 @@ function Home() {
                                 </li>
                                 <li className='flex items-start space-x-2'>
                                     <span className='text-beeYellow'>✔</span>
-                                    <span>Local, Family-Owned & Operated</span>
+                                    <span>
+                                        Local, Family-Owned &amp; Operated
+                                    </span>
                                 </li>
                                 <li className='flex items-start space-x-2'>
                                     <span className='text-beeYellow'>✔</span>
-                                    <span>Experienced & Friendly Staff</span>
+                                    <span>
+                                        Experienced &amp; Friendly Staff
+                                    </span>
                                 </li>
                                 <li className='flex items-start space-x-2'>
                                     <span className='text-beeYellow'>✔</span>

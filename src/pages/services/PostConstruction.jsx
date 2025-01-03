@@ -2,35 +2,35 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
-function Commercial() {
+function PostConstruction() {
     return (
         <div className='w-[70%] mx-auto my-16 text-gray-700'>
             <Helmet>
-                <title>Commercial Cleaning | Cleaning Bee</title>
+                <title>Post-Construction Cleaning | Cleaning Bee</title>
                 <meta
                     name='description'
-                    content="Maintain a polished, welcoming environment for clients and staff with Cleaning Bee's commercial cleaning services—tailored to offices, retail stores, and more."
+                    content='Clean up after renovations or new builds with Cleaning Bee’s post-construction cleaning. We remove debris, dust, and leftover materials for a move-in-ready space.'
                 />
             </Helmet>
 
             {/* Hero / Header */}
             <section className='mb-10'>
                 <h1 className='text-4xl md:text-5xl font-bold text-beeBlack mb-4'>
-                    Commercial Cleaning
+                    Post-Construction Cleaning
                 </h1>
                 <p className='text-lg md:text-xl leading-relaxed max-w-2xl'>
-                    Make a lasting impression on your clients and employees
-                    alike. Our commercial cleaning services keep your workspace
-                    polished, hygienic, and welcoming—perfect for offices,
-                    retail stores, and more.
+                    After the builders leave, we handle the finishing touches.
+                    Our post-construction cleaning removes dust, debris, and
+                    leftover materials, leaving your space move-in ready and
+                    looking its best.
                 </p>
             </section>
 
             {/* Image */}
             <section className='mb-8'>
                 <img
-                    src='/images/commercial-cleaning.jpg'
-                    alt='Commercial Cleaning'
+                    src='/images/construction-cleaning.jpg'
+                    alt='Post-Construction Cleaning'
                     className='w-full h-64 object-cover rounded shadow-md'
                 />
             </section>
@@ -42,29 +42,29 @@ function Commercial() {
                 </h2>
                 <ul className='list-disc list-inside space-y-3 text-lg leading-relaxed'>
                     <li>
-                        <strong>Office Cleanups:</strong> Desks, break rooms,
-                        conference rooms, and common areas.
+                        <strong>Dust & Debris Removal:</strong> Specialized
+                        equipment for drywall dust, wood shavings, and material
+                        scraps.
                     </li>
                     <li>
-                        <strong>Retail Maintenance:</strong> Floor care, window
-                        cleaning, and display sanitizing.
+                        <strong>Surface Polishing:</strong> Wipe down and polish
+                        countertops, fixtures, and appliances.
                     </li>
                     <li>
-                        <strong>Janitorial Oversight:</strong> Comprehensive
-                        daily or weekly services, including trash removal and
-                        supply restocking.
+                        <strong>Floor Care:</strong> Thorough mopping,
+                        vacuuming, or steam-cleaning of tile, hardwood, and
+                        carpets.
                     </li>
                     <li>
-                        <strong>Flexible Scheduling:</strong> Day, night, or
-                        weekend—minimize disruption to your operations.
+                        <strong>Custom Requests:</strong> We adapt to unique
+                        project needs for a final, spotless touch.
                     </li>
                 </ul>
                 <p className='text-lg leading-relaxed'>
-                    Our experienced team uses eco-friendly methods to safeguard
-                    both your staff and the environment. Let us help you
-                    maintain a professional and sanitary setting that boosts
-                    productivity and leaves a positive impression on every
-                    visitor.
+                    We use eco-friendly products to protect indoor air quality
+                    and ensure the health of everyone who enters the space.
+                    Whether it’s a new home build or a remodel, we help you
+                    showcase the results beautifully.
                 </p>
             </section>
 
@@ -76,11 +76,11 @@ function Commercial() {
                     rel='noopener noreferrer'
                     className='inline-block bg-beeYellow text-beeBlack font-semibold py-2 px-4 rounded hover:bg-yellow-500 transition-colors'
                 >
-                    Book a Commercial Cleaning Today
+                    Schedule a Post-Construction Cleaning
                 </a>
             </section>
         </div>
     );
 }
 
-export default Commercial;
+export default PostConstruction;

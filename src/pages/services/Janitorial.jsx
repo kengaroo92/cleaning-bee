@@ -1,87 +1,79 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
 
 function Janitorial() {
     return (
         <div className='w-[70%] mx-auto my-16 text-gray-700'>
             <Helmet>
-                <title>Janitorial Cleaning Services | Cleaning Bee</title>
+                <title>Janitorial Services | Cleaning Bee</title>
                 <meta
                     name='description'
-                    content='Cleaning Bee’s janitorial services provide routine upkeep for offices, schools, and facilities in the Salt Lake Valley. Enjoy spotless restrooms, replenished supplies, and consistent maintenance that keeps your space welcoming and healthy.'
-                />
-                <meta
-                    name='keywords'
-                    content='janitorial services, office cleaning, facility maintenance, salt lake valley, cleaning bee'
+                    content="Maintain a consistently clean environment with Cleaning Bee's janitorial services. From offices and schools to commercial facilities, keep things tidy every day."
                 />
             </Helmet>
 
-            <section className='space-y-6'>
-                <h1 className='text-5xl font-bold text-beeBlack text-center leading-tight'>
+            {/* Hero / Header */}
+            <section className='mb-10'>
+                <h1 className='text-4xl md:text-5xl font-bold text-beeBlack mb-4'>
                     Janitorial Services
                 </h1>
-                <p className='text-xl text-gray-700 leading-relaxed'>
-                    Keep your workspace consistently clean and comfortable with
-                    Cleaning Bee’s professional janitorial services. From daily
-                    maintenance to replenishing supplies, we ensure a healthier,
-                    more productive environment for everyone.
+                <p className='text-lg md:text-xl leading-relaxed max-w-2xl'>
+                    Keep your facilities well-maintained and welcoming. Our
+                    janitorial services ensure a healthy, efficient environment
+                    day after day.
                 </p>
             </section>
 
-            <section className='mt-16'>
+            {/* Image */}
+            <section className='mb-8'>
                 <img
-                    src='/images/janitorial-hero.jpg'
+                    src='/images/janitorial-cleaning.jpg'
                     alt='Janitorial Services'
-                    className='w-full h-64 object-cover rounded-lg shadow-lg'
+                    className='w-full h-64 object-cover rounded shadow-md'
                 />
             </section>
 
-            {/* Detailed Services */}
-            <section className='space-y-10 mt-16'>
-                <h2 className='text-4xl font-bold text-beeBlack'>
-                    Our Janitorial Offerings
+            {/* Service Details */}
+            <section className='space-y-6'>
+                <h2 className='text-2xl font-bold text-beeBlack'>
+                    What We Offer
                 </h2>
-                <ul className='list-disc list-inside space-y-3 text-xl leading-relaxed'>
+                <ul className='list-disc list-inside space-y-3 text-lg leading-relaxed'>
                     <li>
-                        <strong>Routine Maintenance:</strong> Regular dusting,
-                        mopping, and vacuuming keep floors and surfaces clean.
+                        <strong>Routine Upkeep:</strong> Daily or weekly
+                        dusting, sweeping, and trash removal.
                     </li>
                     <li>
-                        <strong>Restroom Sanitation:</strong> Spotless restrooms
-                        with sanitized fixtures and well-stocked supplies.
+                        <strong>Restroom & Supply Management:</strong> Regular
+                        sanitization and restocking of essentials.
                     </li>
                     <li>
-                        <strong>Trash & Recycling:</strong> Timely removal of
-                        waste to maintain a fresh and clutter-free environment.
+                        <strong>Floor & Surface Care:</strong> Mopping,
+                        vacuuming, and disinfecting to keep high-traffic areas
+                        clean.
                     </li>
                     <li>
-                        <strong>Customized Schedules:</strong> Daily, weekly, or
-                        monthly plans designed around your facility’s needs.
+                        <strong>Customized Schedules:</strong> Tailor our
+                        services to your business hours for minimal disruption.
                     </li>
                 </ul>
-                <p className='text-xl text-gray-700 leading-relaxed'>
-                    Our trained team uses eco-friendly products and efficient
-                    practices to deliver reliable results. With Cleaning Bee’s
-                    janitorial services, you can focus on what you do best while
-                    we handle the upkeep.
+                <p className='text-lg leading-relaxed'>
+                    From corporate offices to educational institutions, our
+                    janitorial team ensures a consistently clean space that
+                    supports productivity and peace of mind.
                 </p>
             </section>
 
             {/* CTA */}
-            <section className='text-center space-y-6 mt-16'>
-                <h2 className='text-3xl font-bold text-beeBlack'>
-                    Keep Your Facility Running Smoothly
-                </h2>
-                <p className='text-xl text-gray-700 leading-relaxed'>
-                    Ready to maintain a spotless, welcoming environment? Contact
-                    us today to explore our janitorial packages and find the
-                    perfect fit for your operations.
-                </p>
+            <section className='mt-8'>
                 <a
-                    href='/contact'
-                    className='inline-block bg-beeYellow text-beeBlack font-semibold py-3 px-6 rounded hover:bg-yellow-500 transition-colors text-xl'
+                    href='https://clienthub.getjobber.com/booking/eec2e0b1-8545-40e9-a42f-8e2fe1debdcb'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='inline-block bg-beeYellow text-beeBlack font-semibold py-2 px-4 rounded hover:bg-yellow-500 transition-colors'
                 >
-                    Contact Us Now
+                    Schedule Janitorial Services
                 </a>
             </section>
         </div>
