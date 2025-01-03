@@ -5,7 +5,8 @@ export default {
         extend: {
             colors: {
                 beeYellow: "#FCD307",
-                beeBlack: "#333333",
+                beeBlack: "#0D192D",
+                beeBlue: "#1889EF",
             },
         },
     },

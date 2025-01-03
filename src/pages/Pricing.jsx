@@ -1,10 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 function Pricing() {
     return (
         <div className='w-[70%] mx-auto space-y-16 my-16 text-gray-700'>
-            {/* Page Title */}
+            <Helmet>
+                {" "}
+                <title>Cleaning Bee : Pricing</title>
+            </Helmet>{" "}
             <section className='text-center space-y-4'>
                 <h1 className='text-4xl md:text-5xl font-bold text-beeBlack'>
                     Our Pricing
@@ -14,7 +18,6 @@ function Pricing() {
                     needs.
                 </p>
             </section>
-
             {/* Pricing Plans */}
             <section className='grid md:grid-cols-3 gap-8'>
                 {/* Basic Plan */}
@@ -90,7 +93,6 @@ function Pricing() {
                     </Link>
                 </div>
             </section>
-
             {/* Additional Information */}
             <section className='space-y-4 text-center'>
                 <p className='max-w-3xl mx-auto'>

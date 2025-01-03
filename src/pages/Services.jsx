@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 function Services() {
     return (
         <div className='w-[70%] mx-auto space-y-16 my-16 text-gray-700'>
-            {/* Page Title */}
+            <Helmet>
+                <title>Cleaning Bee : Services</title>
+            </Helmet>
             <section className='text-center space-y-4'>
                 <h1 className='text-4xl md:text-5xl font-bold text-beeBlack'>
                     Our Services
@@ -14,7 +17,6 @@ function Services() {
                     services ensure your space shines.
                 </p>
             </section>
-
             {/* Services Grid */}
             <section className='grid md:grid-cols-3 gap-8'>
                 {/* Standard Cleaning */}
@@ -153,7 +155,6 @@ function Services() {
                     </Link>
                 </div>
             </section>
-
             {/* Additional Info */}
             <section className='text-center space-y-4'>
                 <p className='max-w-3xl mx-auto'>

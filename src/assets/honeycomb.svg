@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="86.60254037844386" viewBox="0 0 100 86.60254037844386" fill="none">
+  <!-- 
+    Explanation:
+    - The hexagons are arranged in a pattern that repeats horizontally and vertically.
+    - Each hexagon has a side length that aligns with the other hexagons in a honeycomb pattern.
+    - 100x86.6... dimensions come from hexagon geometry (height of a hex = side * sqrt(3)).
+    
+    Adjust colors as desired. For example:
+    - fill="#FCD307" for a bee-yellow fill
+    - stroke="#333" or no stroke
+  -->
+
+  <!-- Base hexagon shape -->
+  <defs>
+    <polygon id="hex" points="50,0 100,25 100,75 50,100 0,75 0,25" />
+  </defs>
+
+  <!-- Pattern definition -->
+  <pattern id="honeycombPattern" width="100" height="86.60254037844386" patternUnits="userSpaceOnUse" x="0" y="0">
+    <!-- First row hex -->
+    <use href="#hex" fill="#FCD307" stroke="#333" stroke-width="1" transform="translate(0,-13.39745962155614) scale(0.5)"/>
+    <!-- Second row hex (shifted horizontally by half width) -->
+    <use href="#hex" fill="#FCD307" stroke="#333" stroke-width="1" transform="translate(50,-13.39745962155614) scale(0.5)"/>
+    <!-- Repeat by adjusting y offsets so that pattern tiles seamlessly -->
+  </pattern>
+
+  <!-- Apply the pattern to the whole SVG -->
+  <rect width="100%" height="100%" fill="url(#honeycombPattern)" />
+</svg>

@@ -1,10 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 function Loyalty() {
     return (
         <div className='w-[70%] mx-auto space-y-16 my-16 text-gray-700'>
-            {/* Page Title */}
+            <Helmet>
+                {" "}
+                <title>Cleaning Bee : Loyalty Program</title>
+            </Helmet>{" "}
             <section className='text-center space-y-4'>
                 <h1 className='text-4xl md:text-5xl font-bold text-beeBlack'>
                     The Cleaning Bee Loyalty Program
@@ -14,7 +18,6 @@ function Loyalty() {
                     of your cleaning services.
                 </p>
             </section>
-
             {/* Program Overview */}
             <section className='space-y-4 text-center'>
                 <h2 className='text-3xl md:text-4xl font-bold text-beeBlack'>
@@ -28,7 +31,6 @@ function Loyalty() {
                     you move up through our tiers.
                 </p>
             </section>
-
             {/* Tiers Section */}
             <section className='grid md:grid-cols-3 gap-8 text-center'>
                 {/* Honeycomb Tier */}
@@ -91,7 +93,6 @@ function Loyalty() {
                     </p>
                 </div>
             </section>
-
             {/* Redeeming Points Section */}
             <section className='space-y-4 text-center'>
                 <h2 className='text-3xl md:text-4xl font-bold text-beeBlack'>
@@ -104,7 +105,6 @@ function Loyalty() {
                     your tier, the more generous your redemption options become.
                 </p>
             </section>
-
             {/* Call to Action */}
             <section className='text-center space-y-4'>
                 <p className='max-w-xl mx-auto'>

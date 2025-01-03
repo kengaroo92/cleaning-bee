@@ -1,9 +1,24 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 function Home() {
     return (
         <div className='space-y-16'>
+            <Helmet>
+                <title>
+                    Cleaning Bee | Residential & Commercial Cleaning in the Salt
+                    Lake Valley
+                </title>
+                <meta
+                    name='description'
+                    content='Cleaning Bee offers top-quality residential, commercial, construction, and janitorial cleaning services in the Salt Lake Valley. Experience eco-friendly cleaning solutions and flexible scheduling for a sparkling clean environment.'
+                />
+                <meta
+                    name='keywords'
+                    content='residential cleaning, commercial cleaning, construction cleaning, janitorial services, eco-friendly cleaning, Salt Lake Valley, Utah'
+                />
+            </Helmet>
             {/* Hero Section */}
             <section className='relative h-[60vh] w-screen bg-gray-100 overflow-hidden'>
                 <img
@@ -13,28 +28,39 @@ function Home() {
                 />
                 <div className='absolute inset-0 bg-black bg-opacity-30 flex flex-col justify-center items-center text-center px-4'>
                     <h1 className='text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-md'>
-                        Your Home Cleaning Experts
+                        Your Home Cleaning Experts in the Salt Lake Valley
                     </h1>
                     <p className='text-lg md:text-xl text-white mb-8 max-w-xl'>
-                        Experience a sparkling home without lifting a finger.
+                        Transforming homes and businesses with eco-friendly,
+                        personalized cleaning services. Let us handle the chores
+                        while you enjoy a fresh, comfortable space.
                     </p>
                     <a
-                        href='/contact'
-                        className='inline-block bg-beeYellow text-beeBlack font-semibold py-3 px-6 rounded hover:bg-yellow-500 transition-colors text-lg'
+                        href='https://clienthub.getjobber.com/booking/eec2e0b1-8545-40e9-a42f-8e2fe1debdcb'
+                        target='_blank'
+                        rel='noopener'
+                        className='border-2 border-beeBlue bg-beeYellow text-beeBlue font-bold text-2xl py-2 px-6 rounded hover:bg-beeBlue hover:text-white transition-colors whitespace-nowrap'
                     >
-                        Schedule a Cleaning Today
+                        Schedule A Cleaning
                     </a>
                 </div>
             </section>
 
             {/* Services Section */}
-            {/* Removed px-4 so width is strictly 70% centered, no extra padding */}
             <section className='w-[70%] mx-auto'>
                 <h2 className='text-3xl md:text-4xl font-bold text-beeBlack text-center mb-12'>
-                    Our Services
+                    Our Cleaning Services
                 </h2>
-                <div className='grid md:grid-cols-3 gap-8'>
-                    {/* Service Card 1 */}
+                <p className='text-gray-700 text-lg mb-8 text-center max-w-3xl mx-auto'>
+                    At Cleaning Bee, we offer a range of professional cleaning
+                    services to meet all your needs. From detailed residential
+                    cleans to specialized commercial or construction site
+                    cleaning, our team is equipped to handle it all. Explore our
+                    services below and learn how we can keep your environment
+                    spotless.
+                </p>
+                <div className='grid md:grid-cols-4 gap-8'>
+                    {/* Residential Cleaning */}
                     <div className='bg-white shadow-lg rounded overflow-hidden'>
                         <img
                             src='/images/residential-cleaning.jpg'
@@ -46,8 +72,10 @@ function Home() {
                                 Residential Cleaning
                             </h3>
                             <p className='text-gray-700 mb-4'>
-                                Let us handle your home cleaning so you can
-                                focus on what really matters.
+                                Enjoy a pristine, relaxing home with our
+                                customized residential cleaning. We handle
+                                kitchens, bathrooms, bedrooms, and more—ensuring
+                                every corner is left spotless.
                             </p>
                             <Link
                                 to='/services#residential'
@@ -58,7 +86,7 @@ function Home() {
                         </div>
                     </div>
 
-                    {/* Service Card 2 */}
+                    {/* Commercial Cleaning */}
                     <div className='bg-white shadow-lg rounded overflow-hidden'>
                         <img
                             src='/images/commercial-cleaning.jpg'
@@ -70,8 +98,10 @@ function Home() {
                                 Commercial Cleaning
                             </h3>
                             <p className='text-gray-700 mb-4'>
-                                Keep your office or retail space immaculate for
-                                clients and employees.
+                                Keep your office, retail store, or corporate
+                                space welcoming and hygienic. Our commercial
+                                team works around your schedule to maintain a
+                                professional image.
                             </p>
                             <Link
                                 to='/services#commercial'
@@ -82,23 +112,51 @@ function Home() {
                         </div>
                     </div>
 
-                    {/* Service Card 3 */}
+                    {/* Construction Cleaning */}
                     <div className='bg-white shadow-lg rounded overflow-hidden'>
                         <img
-                            src='/images/deep-cleaning.jpg'
-                            alt='Deep Cleaning'
+                            src='/images/construction-cleaning.jpg'
+                            alt='Construction Cleaning'
                             className='w-full h-64 object-cover'
                         />
                         <div className='p-4'>
                             <h3 className='text-xl font-semibold text-beeBlack mb-2'>
-                                Deep Cleaning
+                                Construction Cleaning
                             </h3>
                             <p className='text-gray-700 mb-4'>
-                                Thorough and detailed cleaning for a truly
-                                refreshed living space.
+                                Post-construction or renovation cleanup made
+                                easy. We remove dust, debris, and materials,
+                                leaving your new or remodeled space ready to be
+                                enjoyed.
                             </p>
                             <Link
-                                to='/services#deep-cleaning'
+                                to='/services#construction'
+                                className='inline-block bg-beeYellow text-beeBlack py-2 px-4 rounded hover:bg-yellow-500 transition-colors'
+                            >
+                                Learn More
+                            </Link>
+                        </div>
+                    </div>
+
+                    {/* Janitorial Services */}
+                    <div className='bg-white shadow-lg rounded overflow-hidden'>
+                        <img
+                            src='/images/janitorial-cleaning.jpg'
+                            alt='Janitorial Services'
+                            className='w-full h-64 object-cover'
+                        />
+                        <div className='p-4'>
+                            <h3 className='text-xl font-semibold text-beeBlack mb-2'>
+                                Janitorial Services
+                            </h3>
+                            <p className='text-gray-700 mb-4'>
+                                Maintain a consistently clean and organized
+                                environment. Our janitorial services ensure
+                                offices, schools, and facilities remain pristine
+                                day after day.
+                            </p>
+                            <Link
+                                to='/services#janitorial'
                                 className='inline-block bg-beeYellow text-beeBlack py-2 px-4 rounded hover:bg-yellow-500 transition-colors'
                             >
                                 Learn More
@@ -113,45 +171,47 @@ function Home() {
                 <h2 className='text-3xl md:text-4xl font-bold text-beeBlack text-center mb-8'>
                     Why Choose Cleaning Bee?
                 </h2>
-                {/* Use a custom grid template: first column 3fr, second column 1fr */}
+                <p className='text-gray-700 text-lg mb-8 text-center max-w-3xl mx-auto'>
+                    We go above and beyond to ensure every customer is
+                    satisfied. With eco-friendly products, flexible scheduling,
+                    and a dedicated team, you can trust Cleaning Bee to deliver
+                    exceptional results every time.
+                </p>
                 <div className='grid gap-8 grid-cols-[3fr_1fr]'>
                     {/* Left Column: Existing Text */}
                     <div className='space-y-6 text-gray-700 text-lg'>
                         <p>
-                            At Cleaning Bee, we believe in providing top-quality
-                            service with a personal touch. Our team of trained
-                            professionals uses only the best equipment and
-                            products to ensure your home or office sparkles.
+                            At Cleaning Bee, we’re committed to providing a
+                            top-quality service with a personal touch. Our
+                            trained professionals use only the best equipment
+                            and products, ensuring your home or office truly
+                            shines.
                         </p>
                         <ul className='list-disc list-inside space-y-2'>
                             <li>
-                                <strong>Reliable and Trustworthy Staff:</strong>{" "}
-                                Our cleaners are vetted and trained, giving you
-                                peace of mind.
+                                <strong>Reliable & Trustworthy Staff:</strong>{" "}
+                                Vetted and trained cleaners provide peace of
+                                mind.
                             </li>
                             <li>
                                 <strong>Flexible Scheduling:</strong> We work
-                                around your schedule, making it convenient for
-                                you.
+                                around your calendar for ultimate convenience.
                             </li>
                             <li>
-                                <strong>Eco-Friendly Products:</strong> We
-                                choose sustainable, non-toxic products that are
-                                safe for your family and pets.
+                                <strong>Eco-Friendly Products:</strong> Safe for
+                                your family, pets, and the environment.
                             </li>
                             <li>
                                 <strong>
                                     Customer Satisfaction Guarantee:
                                 </strong>{" "}
-                                We’re not happy unless you’re delighted with our
-                                services.
+                                We’re not happy unless you’re delighted.
                             </li>
                         </ul>
                         <p>
-                            Join the many satisfied customers who’ve discovered
-                            the difference with Cleaning Bee. Contact us today
-                            to take the first step towards a cleaner, healthier
-                            home.
+                            Ready to enjoy a cleaner, healthier space? Contact
+                            us today and discover how Cleaning Bee can make a
+                            difference in your home or business.
                         </p>
                     </div>
 
@@ -179,7 +239,7 @@ function Home() {
                                 </li>
                                 <li className='flex items-start space-x-2'>
                                     <span className='text-beeYellow'>✔</span>
-                                    <span>Experienced and Friendly Staff</span>
+                                    <span>Experienced & Friendly Staff</span>
                                 </li>
                                 <li className='flex items-start space-x-2'>
                                     <span className='text-beeYellow'>✔</span>

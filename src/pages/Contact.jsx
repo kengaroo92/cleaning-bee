@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 function Contact() {
     const [name, setName] = useState("");
@@ -44,6 +45,10 @@ function Contact() {
 
     return (
         <div className='w-[70%] mx-auto my-16 space-y-16 text-gray-700'>
+            <Helmet>
+                {" "}
+                <title>Cleaning Bee : Contact Us</title>
+            </Helmet>
             <section className='text-center space-y-4'>
                 <h1 className='text-4xl md:text-5xl font-bold text-beeBlack'>
                     Contact Us

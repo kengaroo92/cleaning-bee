@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 function Blog() {
     const posts = [
@@ -42,7 +43,10 @@ function Blog() {
 
     return (
         <div className='w-[70%] mx-auto space-y-16 my-16 text-gray-700'>
-            {/* Page Title */}
+            <Helmet>
+                {" "}
+                <title>Cleaning Bee : Blog</title>
+            </Helmet>{" "}
             <section className='text-center space-y-4'>
                 <h1 className='text-4xl md:text-5xl font-bold text-beeBlack'>
                     The Cleaning Bee Blog
@@ -52,7 +56,6 @@ function Blog() {
                     professional cleaning techniques to keep your space shining.
                 </p>
             </section>
-
             {/* Blog Posts */}
             <section className='space-y-8'>
                 {posts.map((post, index) => (
