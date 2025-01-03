@@ -13,6 +13,7 @@ import Contact from "./pages/Contact.jsx";
 import Loyalty from "./pages/Loyalty.jsx";
 import Blog from "./pages/Blog.jsx";
 import { HelmetProvider } from "react-helmet-async";
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
     return (
