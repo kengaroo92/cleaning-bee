@@ -21,15 +21,21 @@ function Home() {
             </Helmet>
 
             {/* Hero Section */}
-            <section className='relative h-[75vh] w-full bg-gray-100 overflow-hidden'>
+            <section
+                className='relative w-[60%] h-[60vh] mx-auto overflow-hidden'
+                // ~3/5 of viewport width & height, centered horizontally via mx-auto
+            >
+                {/* Hero Image as a full cover background */}
                 <img
                     src='/images/hero-image.jpg'
                     alt='Clean Home'
                     className='absolute inset-0 w-full h-full object-cover'
                 />
+
                 {/* Dark overlay with slight gradient */}
                 <div className='absolute inset-0 bg-gradient-to-b from-black/60 to-black/40' />
 
+                {/* Hero Text/Button */}
                 <div className='relative flex flex-col justify-center items-center h-full text-center px-4'>
                     <h1 className='text-white text-4xl md:text-6xl font-bold drop-shadow-md mb-4 leading-tight'>
                         Your Salt Lake Valley Cleaning Experts
@@ -44,27 +50,27 @@ function Home() {
                         target='_blank'
                         rel='noopener'
                         className='
-              inline-block
-              font-bold
-              text-xl
-              md:text-2xl
-              py-3
-              px-8
-              rounded-full
-              bg-beeBlue
-              text-white
-              border-2
-              border-beeBlue
-              transition-all
-              duration-200
-              ease-in-out
-              shadow-sm
-              hover:shadow-md
-              hover:bg-white
-              hover:text-beeBlue
-              transform hover:-translate-y-0.5
-              focus:outline-none
-            '
+        inline-block
+        font-bold
+        text-xl
+        md:text-2xl
+        py-3
+        px-8
+        rounded-full
+        bg-beeBlue
+        text-white
+        border-2
+        border-beeBlue
+        transition-all
+        duration-200
+        ease-in-out
+        shadow-sm
+        hover:shadow-md
+        hover:bg-white
+        hover:text-beeBlue
+        transform hover:-translate-y-0.5
+        focus:outline-none
+      '
                     >
                         Schedule A Cleaning
                     </a>
