@@ -92,6 +92,7 @@ function Footer() {
                     >
                         <FaFacebookF size={20} />
                     </a>
+                    {/* 
                     <a
                         href='https://www.instagram.com/cleaningbee'
                         className='text-white hover:text-beeYellow transition-colors'
@@ -99,6 +100,7 @@ function Footer() {
                     >
                         <FaInstagram size={20} />
                     </a>
+                    */}
                 </div>
 
                 {/* Bottom Section */}
