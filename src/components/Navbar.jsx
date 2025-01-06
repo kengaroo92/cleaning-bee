@@ -1,167 +1,241 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import CallButton from "./CallButton";
 
 function Navbar() {
+    const [menuOpen, setMenuOpen] = useState(false);
+
+    const toggleMenu = () => setMenuOpen(!menuOpen);
+
     return (
         <header className='sticky top-4 z-50'>
             <nav
                 className='
-          relative
-          mx-auto
-          w-4/6
-          flex
-          items-center
-          justify-between
-          px-4
-          py-3
-          border
-          border-gray-300
-          rounded-[36px]
-        '
+                    relative
+                    mx-auto
+                    w-4/6
+                    flex
+                    items-center
+                    justify-between
+                    px-4
+                    py-3
+                    border
+                    border-gray-300
+                    rounded-[36px]
+                '
             >
                 {/* Frosted glass background */}
                 <div
                     className='
-            absolute
-            inset-0
-            -z-10
-            bg-white/50
-            backdrop-blur
-            rounded-[36px]
-          '
+                        absolute
+                        inset-0
+                        -z-10
+                        bg-white/50
+                        backdrop-blur
+                        rounded-[36px]
+                    '
                 />
-
                 {/* Logo */}
-                <div className='flex items-center'>
+                <NavLink to='/' className='flex items-center md:space-x-2'>
                     <img
-                        src='/Artboard 2.svg'
-                        alt='Cleaning Bee Logo'
-                        className='h-auto w-44 object-contain'
+                        src='/Logo-Icon-Filled.svg'
+                        alt='Cleaning Bee Icon'
+                        className='hidden md:block h-20 w-auto object-contain'
                     />
-                </div>
-
-                {/* Navigation + CTA */}
-                <div className='flex items-center space-x-6'>
-                    {/* Each NavLink uses a function to set className based on whether it's active */}
+                    <img
+                        src='/Logo-Text-Wide.svg'
+                        alt='Cleaning Bee Text'
+                        className='h-auto w-full md:w-60 object-contain'
+                    />
+                </NavLink>
+                {/* Desktop Navigation + CTA */}
+                <div className='hidden md:flex items-center space-x-6'>
                     <NavLink
                         to='/'
                         className={({ isActive }) =>
-                            `
-                text-base font-semibold transition-colors
-                ${
-                    isActive
-                        ? "text-beeYellow" /* Active page style without underline */
-                        : "text-black hover:text-beeYellow" /* Hover style */
-                }
-              `
+                            `text-lg font-semibold transition-colors ${
+                                isActive
+                                    ? "text-beeYellow"
+                                    : "text-black hover:text-beeYellow"
+                            }`
                         }
                     >
                         Home
                     </NavLink>
-
                     <NavLink
                         to='/services'
                         className={({ isActive }) =>
-                            `
-                text-base font-semibold transition-colors
-                ${
-                    isActive
-                        ? "text-beeYellow"
-                        : "text-black hover:text-beeYellow"
-                }
-              `
+                            `text-lg font-semibold transition-colors ${
+                                isActive
+                                    ? "text-beeYellow"
+                                    : "text-black hover:text-beeYellow"
+                            }`
                         }
                     >
                         Services
                     </NavLink>
-
                     <NavLink
                         to='/pricing'
                         className={({ isActive }) =>
-                            `
-                text-base font-semibold transition-colors
-                ${
-                    isActive
-                        ? "text-beeYellow"
-                        : "text-black hover:text-beeYellow"
-                }
-              `
+                            `text-lg font-semibold transition-colors ${
+                                isActive
+                                    ? "text-beeYellow"
+                                    : "text-black hover:text-beeYellow"
+                            }`
                         }
                     >
                         Pricing
                     </NavLink>
-
                     <NavLink
                         to='/about'
                         className={({ isActive }) =>
-                            `
-                text-base font-semibold transition-colors
-                ${
-                    isActive
-                        ? "text-beeYellow"
-                        : "text-black hover:text-beeYellow"
-                }
-              `
+                            `text-lg font-semibold transition-colors ${
+                                isActive
+                                    ? "text-beeYellow"
+                                    : "text-black hover:text-beeYellow"
+                            }`
                         }
                     >
                         About
                     </NavLink>
-                    {/* 
                     <NavLink
                         to='/blog'
                         className={({ isActive }) =>
-                            `
-                text-base font-semibold transition-colors
-                ${
-                    isActive
-                        ? "text-beeYellow"
-                        : "text-black hover:text-beeYellow"
-                }
-              `
+                            `text-lg font-semibold transition-colors ${
+                                isActive
+                                    ? "text-beeYellow"
+                                    : "text-black hover:text-beeYellow"
+                            }`
                         }
                     >
                         Blog
                     </NavLink>
-                    */}
-
                     <NavLink
                         to='/contact'
                         className={({ isActive }) =>
-                            `
-                text-base font-semibold transition-colors
-                ${
-                    isActive
-                        ? "text-beeYellow"
-                        : "text-black hover:text-beeYellow"
-                }
-              `
+                            `text-lg font-semibold transition-colors ${
+                                isActive
+                                    ? "text-beeYellow"
+                                    : "text-black hover:text-beeYellow"
+                            }`
                         }
                     >
                         Contact
                     </NavLink>
-
-                    <a
-                        href='tel:8017122639'
-                        className='
-              inline-block
-              px-4
-              py-2
-              text-sm
-              font-medium
-              text-white
-              bg-beeYellow
-              rounded-[36px]
-              hover:bg-beeYellow/90
-              focus:outline-none
-              focus-visible:ring
-              focus-visible:ring-yellow-400
-              transition
-            '
-                    >
-                        Call Us: 801-712-2639
-                    </a>
+                    <CallButton />
                 </div>
+                {/* Mobile Menu Button */}
+                <button
+                    className='md:hidden ml-4 flex items-center justify-center w-8 h-8 text-black'
+                    onClick={toggleMenu}
+                >
+                    <div className='space-y-1'>
+                        <span className='block w-6 h-[2px] bg-black'></span>
+                        <span className='block w-6 h-[2px] bg-black'></span>
+                        <span className='block w-6 h-[2px] bg-black'></span>
+                    </div>
+                </button>
             </nav>
+
+            {/* Mobile Menu */}
+            {menuOpen && (
+                <div
+                    className='
+                        md:hidden
+                        absolute
+                        top-16
+                        left-0
+                        w-full
+                        bg-white
+                        rounded-b-lg
+                        shadow-lg
+                        border-t
+                        border-gray-300
+                    '
+                >
+                    <div className='px-6 py-4 space-y-4'>
+                        <NavLink
+                            to='/'
+                            onClick={() => setMenuOpen(false)}
+                            className={({ isActive }) =>
+                                `block text-lg font-semibold px-4 py-2 rounded-md transition-all ${
+                                    isActive
+                                        ? "bg-beeYellow text-white"
+                                        : "text-black hover:bg-gray-100"
+                                }`
+                            }
+                        >
+                            Home
+                        </NavLink>
+                        <NavLink
+                            to='/services'
+                            onClick={() => setMenuOpen(false)}
+                            className={({ isActive }) =>
+                                `block text-lg font-semibold px-4 py-2 rounded-md transition-all ${
+                                    isActive
+                                        ? "bg-beeYellow text-white"
+                                        : "text-black hover:bg-gray-100"
+                                }`
+                            }
+                        >
+                            Services
+                        </NavLink>
+                        <NavLink
+                            to='/pricing'
+                            onClick={() => setMenuOpen(false)}
+                            className={({ isActive }) =>
+                                `block text-lg font-semibold px-4 py-2 rounded-md transition-all ${
+                                    isActive
+                                        ? "bg-beeYellow text-white"
+                                        : "text-black hover:bg-gray-100"
+                                }`
+                            }
+                        >
+                            Pricing
+                        </NavLink>
+                        <NavLink
+                            to='/about'
+                            onClick={() => setMenuOpen(false)}
+                            className={({ isActive }) =>
+                                `block text-lg font-semibold px-4 py-2 rounded-md transition-all ${
+                                    isActive
+                                        ? "bg-beeYellow text-white"
+                                        : "text-black hover:bg-gray-100"
+                                }`
+                            }
+                        >
+                            About
+                        </NavLink>
+                        <NavLink
+                            to='/blog'
+                            onClick={() => setMenuOpen(false)}
+                            className={({ isActive }) =>
+                                `block text-lg font-semibold px-4 py-2 rounded-md transition-all ${
+                                    isActive
+                                        ? "bg-beeYellow text-white"
+                                        : "text-black hover:bg-gray-100"
+                                }`
+                            }
+                        >
+                            Blog
+                        </NavLink>
+                        <NavLink
+                            to='/contact'
+                            onClick={() => setMenuOpen(false)}
+                            className={({ isActive }) =>
+                                `block text-lg font-semibold px-4 py-2 rounded-md transition-all ${
+                                    isActive
+                                        ? "bg-beeYellow text-white"
+                                        : "text-black hover:bg-gray-100"
+                                }`
+                            }
+                        >
+                            Contact
+                        </NavLink>
+                        <CallButton onClick={() => setMenuOpen(false)} />
+                    </div>
+                </div>
+            )}
         </header>
     );
 }

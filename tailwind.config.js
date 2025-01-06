@@ -4,7 +4,7 @@ export default {
     theme: {
         extend: {
             colors: {
-                beeYellow: "#FCD307",
+                beeYellow: "#C69B00",
                 beeBlack: "#0D192D",
                 beeBlue: "#1889EF",
             },

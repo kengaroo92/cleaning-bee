@@ -12,7 +12,9 @@ import Pricing from "./pages/Pricing.jsx";
 import Contact from "./pages/Contact.jsx";
 import Loyalty from "./pages/Loyalty.jsx";
 import Blog from "./pages/Blog.jsx";
+import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
 import { HelmetProvider } from "react-helmet-async";
+import BlogPost from "./pages/BlogPost.jsx";
 
 function App() {
     return (
@@ -42,6 +44,8 @@ function App() {
                     <Route path='/contact' element={<Contact />} />
                     <Route path='/loyalty' element={<Loyalty />} />
                     <Route path='/blog' element={<Blog />} />
+                    <Route path='/blog/:slug' element={<BlogPost />} />
+                    <Route path='privacy-policy' element={<PrivacyPolicy />} />
                 </Routes>
             </Layout>
         </HelmetProvider>
